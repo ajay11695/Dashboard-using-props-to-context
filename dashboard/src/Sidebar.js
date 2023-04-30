@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { UserContext } from './UserContext';
 
 function Sidebar() {
-  let { userInfo,isLogin } = useContext(UserContext);
+  let { state } = useContext(UserContext);
   return (
     <div className="sidebar">
       <ul>
@@ -41,9 +41,9 @@ function Sidebar() {
         </li>
       </ul>
 
-      {isLogin && (
+      {state.isLogin && (
         <div className="bg">
-          <UserInfo data={userInfo} />
+          <UserInfo data={state.userInfo} />
         </div>
       )}
     </div>

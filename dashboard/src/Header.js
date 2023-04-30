@@ -8,7 +8,6 @@ function Header() {
     logoutHandler,
     state,
     handleModal,
-    userInfo
   } = useContext(UserContext);
 
   return (
@@ -33,7 +32,7 @@ function Header() {
       </div>
       {state.isLogin ? (
         <>
-          <UserInfo data={userInfo} />
+          <UserInfo data={state.userInfo} />
           <button className="logout" onClick={logoutHandler}>
             Log Out
           </button>
